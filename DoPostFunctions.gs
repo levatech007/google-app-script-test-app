@@ -1,3 +1,4 @@
+var sendToEmail = Config().sendToEmail;
 var messages;
 
 function processForm(name, email, message) {
@@ -13,7 +14,7 @@ function getMessages() {
 function sendEmail(name, email, message) {
   var formattedName = name.charAt(0).toUpperCase() + name.slice(1);
   MailApp.sendEmail({
-        to: "evaliisagalen@gmail.com",
+        to: sendToEmail,
         subject: "New form entry: " + formattedName,
         htmlBody: 
         "Name: " + formattedName + "<br>" +
