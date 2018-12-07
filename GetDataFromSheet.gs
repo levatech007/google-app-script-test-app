@@ -16,18 +16,18 @@ function addHeadings(contents, headings) {
 }
 
 function buildSuccessGetResponse(message) {
-  var response = JSON.stringify({
+  var response = {
     data: contentWithHeadings,
     message: message,
-  });
+  };
   return ContentService.createTextOutput(JSON.stringify(response));
 }
 
 function buildErrorResponse(message) {
-  var response = JSON.stringify({
+  var response = {
     status: 'error',
     message: message
-  });
+  };
   
   return ContentService.createTextOutput(JSON.stringify(response));
 }
